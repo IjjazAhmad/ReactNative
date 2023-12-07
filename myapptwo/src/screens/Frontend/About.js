@@ -1,25 +1,14 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
-
+import styles from '../StyleSheet/style'
 export default function About() {
   return (
-    <View  style={styles.flexContainer}>
+    <View style={styles.flexContainer}>
+      <View style={[styles.box, styles.flexCenter,styles.shadowProp]}>
       <Text style={styles.h1}>About</Text>
+      </View>
     </View>
   )
 }
 
 
-const styles = StyleSheet.create({
-  flexContainer:{
-    flex :1,
-    backgroundColor:"#432818"
-  },
-  h1:{
-    textAlign:"center",
-    fontSize:50,
-    fontWeight:"bold",
-    color:"white"
-  }
- 
-})

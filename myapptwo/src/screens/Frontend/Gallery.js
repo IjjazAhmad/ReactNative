@@ -1,53 +1,59 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
-import React from 'react'
+import { View, Text,  Image, Button, TouchableOpacity, TouchableHighlight, ScrollView, } from 'react-native'
+import React, { useState } from 'react'
 import logo from '../../assets/logo.png'
+import styles from "../StyleSheet/style"
 export default function Gallery() {
+  const [state, setState] = useState(0)
   return (
-    <View style={styles.flexContainer}>
-      <View style={[styles.box, styles.flexCenter,styles.shadowProp]}>
-      <Image style={styles.img} source={{uri:"https://i.pinimg.com/originals/27/b2/c5/27b2c514ba0a9d433b7293099908e339.jpg"}} />
-      <Image style={styles.img} source={{uri:"https://cdn.pixabay.com/photo/2016/12/27/13/10/logo-1933884_640.png"}}/>
-      <Image style={styles.img} source={require(logo)}/>
+    <ScrollView>
+      <View style={[styles.flexContainer,{paddingVertical:40}]}>
+        <View style={[styles.box, styles.flexCenter, styles.shadowProp]}>
+          <Image style={styles.img} source={{ uri: "https://i.pinimg.com/originals/27/b2/c5/27b2c514ba0a9d433b7293099908e339.jpg" }} />
+        </View>
+        <Button title='Inc' onPress={() => { setState(state + 1) }} />
+
+        <Text>
+          Press {state} Times
+        </Text>
+        <Button title='Reset' onPress={() => { setState(0) }} />
+        <TouchableOpacity
+          style={[styles.btn, styles.shadowProp]}
+          activeOpacity={0.5}
+
+          onPress={() => { setState(state - 1) }}
+        >
+          <Text>Dec</Text>
+        </TouchableOpacity>
+        <TouchableHighlight
+          onPressOut={() => {
+            setState(state + 1)
+          }}
+          onPressIn={() => {
+            setState(state + 1)
+          }}
+          underlayColor="#11fae1"
+          style={[styles.btn, styles.shadowProp]}
+
+        >
+          <Text>In Out Button</Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          underlayColor="#11fae1"
+          onLongPress={() => {
+            setState(state + 1)
+          }}
+
+          style={[styles.btn, styles.shadowProp]}
+
+        >
+          <Text>Long Press Button</Text>
+        </TouchableHighlight>
+
+       
+
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
 
-const styles = StyleSheet.create({
-  flexContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#0096c7"
-  },
-  flexCenter: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  box: {
-    width: 150,
-    height: 150,
-    backgroundColor: "red",
-    borderRadius:10,
-    borderWidth:2,
-    borderColor: "white",
-  },
-  h1: {
-    textAlign: "center",
-    fontSize: 50,
-    fontWeight: "bold",
-    color: "white"
-  },
-  shadowProp: {
-    shadowColor: '#171717',
-    shadowOffset: {width: -2, height: 4},
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-  },
-  img:{
-    width:100,
-    height : 70,
-  }
-
-})
