@@ -2,7 +2,7 @@ import { View, Text,  Image, Button, TouchableOpacity, TouchableHighlight, Scrol
 import React, { useState } from 'react'
 import logo from '../../assets/logo.png'
 import styles from "../StyleSheet/style"
-export default function Gallery() {
+export default function Gallery({navigation}) {
   const [state, setState] = useState(0)
   return (
     <ScrollView>
@@ -39,17 +39,25 @@ export default function Gallery() {
         </TouchableHighlight>
         <TouchableHighlight
           underlayColor="#11fae1"
-          onLongPress={() => {
-            setState(state + 1)
-          }}
-
+          onPress={()=>{navigation.navigate("Home") }}
           style={[styles.btn, styles.shadowProp]}
-
         >
-          <Text>Long Press Button</Text>
+          <Text>Back TO Home</Text>
         </TouchableHighlight>
-
-       
+        <TouchableHighlight
+          underlayColor="#11fae1"
+          onPress={()=>{navigation.navigate("Contact") }}
+          style={[styles.btn, styles.shadowProp]}
+        >
+          <Text>Back TO Contact</Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          underlayColor="#11fae1"
+          onPress={()=>{navigation.navigate("About") }}
+          style={[styles.btn, styles.shadowProp]}
+        >
+          <Text>GO TO About</Text>
+        </TouchableHighlight>
 
       </View>
     </ScrollView>
