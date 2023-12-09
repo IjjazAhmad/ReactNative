@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   flexContainer: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
+    paddingHorizontal:10,
   },
   flexCenter: {
     justifyContent: "center",
