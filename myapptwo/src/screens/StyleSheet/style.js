@@ -53,7 +53,18 @@ const styles = StyleSheet.create({
   },
   logo: {
     height: 20
-  }
+  },
+  formControl:{
+    width:"90%",
+    borderWidth: 2,
+    borderColor: "#fff",
+    marginVertical: 10,
+    borderRadius:10,
+    color:"#fff",
+    paddingHorizontal:15
+
+  },
+
 })
 
 export default styles;

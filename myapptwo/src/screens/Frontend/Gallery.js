@@ -1,20 +1,21 @@
-import { View, Text,  Image, Button, TouchableOpacity, TouchableHighlight, ScrollView, } from 'react-native'
+import { View, Text, Image, Button, TouchableOpacity, TouchableHighlight, ScrollView, } from 'react-native'
 import React, { useState } from 'react'
 import logo from '../../assets/logo.png'
 import styles from "../StyleSheet/style"
-export default function Gallery({navigation}) {
+export default function Gallery({ navigation }) {
   const [state, setState] = useState(0)
   return (
     <ScrollView>
-      <View style={[styles.flexContainer,{paddingVertical:40}]}>
+      <View style={[styles.flexContainer, { paddingVertical: 40 }]}>
         <View style={[styles.box, styles.flexCenter, styles.shadowProp]}>
           <Image style={styles.img} source={{ uri: "https://i.pinimg.com/originals/27/b2/c5/27b2c514ba0a9d433b7293099908e339.jpg" }} />
         </View>
         <Button title='Inc' onPress={() => { setState(state + 1) }} />
-
-        <Text>
-          Press {state} Times
-        </Text>
+        <View style={{marginVertical:20}}>
+          <Text>
+            Press {state} Times
+          </Text>
+        </View>
         <Button title='Reset' onPress={() => { setState(0) }} />
         <TouchableOpacity
           style={[styles.btn, styles.shadowProp]}
@@ -39,26 +40,26 @@ export default function Gallery({navigation}) {
         </TouchableHighlight>
         <TouchableHighlight
           underlayColor="#11fae1"
-          onPress={()=>{navigation.navigate("Home") }}
+          onPress={() => { navigation.navigate("Home") }}
           style={[styles.btn, styles.shadowProp]}
         >
           <Text>Back TO Home</Text>
         </TouchableHighlight>
         <TouchableHighlight
           underlayColor="#11fae1"
-          onPress={()=>{navigation.navigate("Contact") }}
+          onPress={() => { navigation.navigate("Contact") }}
           style={[styles.btn, styles.shadowProp]}
         >
           <Text>Back TO Contact</Text>
         </TouchableHighlight>
         <TouchableHighlight
           underlayColor="#11fae1"
-          onPress={()=>{navigation.navigate("About") }}
+          onPress={() => { navigation.navigate("About") }}
           style={[styles.btn, styles.shadowProp]}
         >
           <Text>Back TO About</Text>
         </TouchableHighlight>
-        
+
 
       </View>
     </ScrollView>
