@@ -7,6 +7,7 @@ import About from '../screens/Frontend/About';
 import Contact from '../screens/Frontend/Contact';
 import Gallery from '../screens/Frontend/Gallery';
 import Footer from '../components/Footer';
+import HeaderLogo from '../components/HeaderLogo';
 
 const Stack = createNativeStackNavigator();
 export default function AppNavigator() {
@@ -20,7 +21,7 @@ export default function AppNavigator() {
         headerTitleStyle: {
           fontWeight: 'bold',
         },
-        headerShown: false
+        headerRight: ()=><HeaderLogo/>
       }}>
         <Stack.Screen 
         name="Home" 

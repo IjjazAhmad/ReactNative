@@ -51,13 +51,7 @@ export default function Gallery({navigation}) {
         >
           <Text>Back TO Contact</Text>
         </TouchableHighlight>
-        <TouchableHighlight
-          underlayColor="#11fae1"
-          onPress={()=>{navigation.navigate("About") }}
-          style={[styles.btn, styles.shadowProp]}
-        >
-          <Text>GO TO About</Text>
-        </TouchableHighlight>
+        
 
       </View>
     </ScrollView>
