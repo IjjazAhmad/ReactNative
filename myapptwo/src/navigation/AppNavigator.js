@@ -29,7 +29,7 @@ export default function AppNavigator() {
         options={{ title: 'MY HOME', headerTitleAlign:"center"}}
         
         />
-        <Stack.Screen name="About" component={About} />
+        <Stack.Screen name="About" component={About} initialParams={{name: "usman", age:22, status:"active"}} />
         <Stack.Screen name="Contact" component={Contact} />
         <Stack.Screen name="Gallery" component={Gallery} />
       </Stack.Navigator>
