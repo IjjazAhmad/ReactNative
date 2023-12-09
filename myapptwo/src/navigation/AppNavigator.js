@@ -6,6 +6,7 @@ import Home from '../screens/Frontend/Home';
 import About from '../screens/Frontend/About';
 import Contact from '../screens/Frontend/Contact';
 import Gallery from '../screens/Frontend/Gallery';
+import Footer from '../components/Footer';
 
 const Stack = createNativeStackNavigator();
 export default function AppNavigator() {
@@ -19,6 +20,7 @@ export default function AppNavigator() {
         headerTitleStyle: {
           fontWeight: 'bold',
         },
+        headerShown: false
       }}>
         <Stack.Screen 
         name="Home" 
@@ -30,6 +32,7 @@ export default function AppNavigator() {
         <Stack.Screen name="Contact" component={Contact} />
         <Stack.Screen name="Gallery" component={Gallery} />
       </Stack.Navigator>
+      <Footer/>
     </NavigationContainer>
     )
 }
